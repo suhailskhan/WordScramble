@@ -63,6 +63,11 @@ struct ContentView: View {
             return
         }
         
+        guard isValid(word: answer) else {
+            wordError(title: "Word not valid", message: "This word is not long enough, or you used the root word!")
+            return
+        }
+        
         withAnimation {
             usedWords.insert(answer, at: 0)
         }
@@ -105,6 +110,10 @@ struct ContentView: View {
         let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
         
         return misspelledRange.location == NSNotFound
+    }
+    
+    func isValid(word: String) -> Bool {
+        return !(newWord.count == 3 || newWord == rootWord)
     }
     
     func wordError(title: String, message: String) {
