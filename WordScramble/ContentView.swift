@@ -16,6 +16,8 @@ struct ContentView: View {
     @State private var errorMessage = ""
     @State private var showingError = false
     
+    @State private var score = 0
+    
     var body: some View {
         NavigationView {
             List {
@@ -25,12 +27,28 @@ struct ContentView: View {
                 }
                 
                 Section {
+                    VStack {
+                        Spacer()
+                        Text("Score")
+                        HStack {
+                            Spacer()
+                            Text("\(score)")
+                                .font(.largeTitle.bold())
+                            Spacer()
+                        }
+                        Spacer()
+                    }
+                }
+                
+                Section {
                     ForEach(usedWords, id: \.self) { word in
                         HStack {
                             Image(systemName: "\(word.count).circle")
                             Text(word)
                         }
                     }
+                } header: {
+                    Text(usedWords.isEmpty ? "" : "Used words")
                 }
             }
             .navigationTitle(rootWord)
@@ -73,6 +91,7 @@ struct ContentView: View {
         
         withAnimation {
             usedWords.insert(answer, at: 0)
+            addPoints(usedWords.count, newWord.count)
         }
         newWord = ""
     }
@@ -123,6 +142,19 @@ struct ContentView: View {
         errorTitle = title
         errorMessage = message
         showingError = true
+    }
+    
+    func addPoints(_ usedWordsCount: Int, _ newWordLength: Int) {
+        if (score > 0)
+        {
+            var tempScore = score / ( usedWordsCount - 1 )
+            tempScore += newWordLength
+            tempScore *= usedWordsCount
+            score = tempScore
+        }
+        else {
+            score = usedWordsCount * newWordLength
+        }
     }
 }
 
