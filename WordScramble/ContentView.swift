@@ -40,15 +40,13 @@ struct ContentView: View {
                     }
                 }
                 
-                Section {
+                Section(usedWords.isEmpty ? "" : "Used words") {
                     ForEach(usedWords, id: \.self) { word in
                         HStack {
                             Image(systemName: "\(word.count).circle")
                             Text(word)
                         }
                     }
-                } header: {
-                    Text(usedWords.isEmpty ? "" : "Used words")
                 }
             }
             .navigationTitle(rootWord)
