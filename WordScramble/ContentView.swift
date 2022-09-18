@@ -85,7 +85,7 @@ struct ContentView: View {
         }
         
         guard isValid(word: answer) else {
-            wordError(title: "Word not valid", message: "This word is not long enough, or you used the root word!")
+            wordError(title: "Word not valid", message: "This word is either not long enough, or you used the root word!")
             return
         }
         
@@ -135,7 +135,7 @@ struct ContentView: View {
     }
     
     func isValid(word: String) -> Bool {
-        return !(newWord.count == 3 || newWord == rootWord)
+        return !(word.count == 3 || word == rootWord)
     }
     
     func wordError(title: String, message: String) {
