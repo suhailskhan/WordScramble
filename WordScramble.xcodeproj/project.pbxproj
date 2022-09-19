@@ -16,7 +16,7 @@
 
 /* Begin PBXFileReference section */
 		FD0FB13828D7E685005C6FB1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		FD0FB13928D7E971005C6FB1 /* screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = screenshot.png; path = ../../../../../var/folders/z0/_wy5f_c92_vg3n5jlfjfg9280000gn/T/screenshot.png; sourceTree = "<group>"; };
+		FD0FB13A28D7EBAC005C6FB1 /* screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot.png; sourceTree = "<group>"; };
 		FD3E339028B730A100627F8D /* WordScramble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordScramble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD3E339328B730A100627F8D /* WordScrambleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScrambleApp.swift; sourceTree = "<group>"; };
 		FD3E339528B730A100627F8D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -40,7 +40,7 @@
 			isa = PBXGroup;
 			children = (
 				FD0FB13828D7E685005C6FB1 /* README.md */,
-				FD0FB13928D7E971005C6FB1 /* screenshot.png */,
+				FD0FB13A28D7EBAC005C6FB1 /* screenshot.png */,
 				FD3E339228B730A100627F8D /* WordScramble */,
 				FD3E339128B730A100627F8D /* Products */,
 			);
